@@ -1,0 +1,7 @@
+asset,start_date,end_date,observations,lower_bound,upper_bound,is_non_traditional
+US Equity,1989-09-11,2026-03-19,10471,0.2,0.3,False
+US Bonds,1976-01-30,2026-03-19,14022,0.2,0.3,False
+REITs,2003-03-31,2026-03-19,6936,0.0,0.3,False
+Gold,1976-01-02,2026-03-19,14042,0.0,0.3,True
+Bitcoin,2010-07-19,2026-03-19,5031,0.0,0.3,True
+JPY,1976-01-01,2026-03-19,14043,0.0,0.3,True

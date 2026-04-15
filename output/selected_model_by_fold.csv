@@ -1,0 +1,5 @@
+fold,train_start,train_end,test_start,test_end,selected_model_family,selected_model_label,selected_threshold,selected_logistic_threshold,selected_xgb_threshold,validation_max_drawdown,validation_cagr,validation_trigger_rate
+1,2007-12-31,2009-12-31,2010-12-31,2013-12-31,Logistic,Logistic regression,0.25,,,-0.08045662302436296,0.0999065889835542,1.0
+2,2007-12-31,2013-12-31,2014-12-31,2017-12-31,Logistic,Logistic regression,0.25,,,-0.035870367837540384,0.017368298004736715,1.0
+3,2007-12-31,2017-12-31,2018-12-31,2021-12-31,Logistic,Logistic regression,0.25,,,-0.06473040648556361,0.04920895899798161,1.0
+4,2007-12-31,2021-12-31,2022-12-31,2025-12-31,Logistic,Logistic regression,0.25,,,-0.20060652227793563,-0.015045504043291968,0.5

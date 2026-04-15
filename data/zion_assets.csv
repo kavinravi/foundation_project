@@ -1,0 +1,7 @@
+ticker,name,asset_class,exchange,currency,sector,industry,country,is_active,meta,created_at,updated_at
+B3REITT,REIT Total Return Index,reit,,USD,,,,1,"{""source"": ""finance_db"", ""original_asset_id"": 6}",2026-03-25T04:08:30Z,2026-03-25T04:08:30Z
+LBUSTRUU,US Treasury Bond Index,bond,,USD,,,,1,"{""source"": ""finance_db"", ""original_asset_id"": 4}",2026-03-25T04:08:30Z,2026-03-25T04:08:30Z
+SPXT,S&P Total Return Index,equity,,USD,,,,1,"{""source"": ""finance_db"", ""original_asset_id"": 1}",2026-03-25T04:08:30Z,2026-03-25T04:08:30Z
+USDJPY,USD/JPY Exchange Rate,fx,,USD,,,,1,"{""source"": ""finance_db"", ""original_asset_id"": 3}",2026-03-25T04:08:30Z,2026-03-25T04:08:30Z
+XAU,Gold Spot,commodity,,USD,,,,1,"{""source"": ""finance_db"", ""original_asset_id"": 2}",2026-03-25T04:08:30Z,2026-03-25T04:08:30Z
+XBTUSD,Bitcoin USD,crypto,,USD,,,,1,"{""source"": ""finance_db"", ""original_asset_id"": 5}",2026-03-25T04:08:30Z,2026-03-25T04:08:30Z

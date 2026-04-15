@@ -1,0 +1,39 @@
+feature_name,family,lookback_months,description
+bitcoin_mom_1m,crypto,1.0,Bitcoin trailing 1-month price momentum
+bitcoin_mom_3m,crypto,3.0,Bitcoin trailing 3-month price momentum
+bitcoin_mom_6m,crypto,6.0,Bitcoin trailing 6-month price momentum
+bitcoin_available,crypto,,Indicator for whether Bitcoin history is available
+gold_rel_mom_3m,defensive_relative,3.0,Gold relative momentum versus US equity over 3 months
+jpy_rel_mom_3m,defensive_relative,3.0,JPY relative momentum versus US equity over 3 months
+gold_rel_mom_6m,defensive_relative,6.0,Gold relative momentum versus US equity over 6 months
+jpy_rel_mom_6m,defensive_relative,6.0,JPY relative momentum versus US equity over 6 months
+gold_rel_mom_12m,defensive_relative,12.0,Gold relative momentum versus US equity over 12 months
+jpy_rel_mom_12m,defensive_relative,12.0,JPY relative momentum versus US equity over 12 months
+baa_widen_6m,macro_memory,6.0,Change in BAA spread over the last 6 months
+inv_6m_any,macro_memory,6.0,Indicator for yield-curve inversion at any point over the last 6 months
+vix_6m_max,macro_memory,6.0,Maximum VIX level observed over the last 6 months
+baa_widen_12m,macro_memory,12.0,Change in BAA spread over the last 12 months
+inv_12m_any,macro_memory,12.0,Indicator for yield-curve inversion at any point over the last 12 months
+vix_12m_max,macro_memory,12.0,Maximum VIX level observed over the last 12 months
+baa_widen_18m,macro_memory,18.0,Change in BAA spread over the last 18 months
+inv_18m_any,macro_memory,18.0,Indicator for yield-curve inversion at any point over the last 18 months
+vix_18m_max,macro_memory,18.0,Maximum VIX level observed over the last 18 months
+vix_change_1m,macro_spot,1.0,VIX percent change over 1 months
+vix_change_3m,macro_spot,3.0,VIX percent change over 3 months
+vix_change_6m,macro_spot,6.0,VIX percent change over 6 months
+baa10y,macro_spot,,Latest level of BAA Corporate minus 10Y Treasury Spread
+t10y2y,macro_spot,,Latest level of 10Y minus 2Y Treasury Spread
+vixcls,macro_spot,,Latest level of CBOE Volatility Index
+spx_mom_1m,market_momentum,1.0,US equity trailing 1-month price momentum
+spx_mom_3m,market_momentum,3.0,US equity trailing 3-month price momentum
+spx_mom_6m,market_momentum,6.0,US equity trailing 6-month price momentum
+spx_vol_1m,market_risk,1.0,US equity realized volatility over 1 months
+avg_corr_3m,market_risk,3.0,Average pairwise cross-asset correlation over 3 months
+equity_drawdown_3m,market_risk,3.0,US equity trailing drawdown over 3 months
+spx_vol_3m,market_risk,3.0,US equity realized volatility over 3 months
+avg_corr_6m,market_risk,6.0,Average pairwise cross-asset correlation over 6 months
+equity_drawdown_6m,market_risk,6.0,US equity trailing drawdown over 6 months
+spx_vol_6m,market_risk,6.0,US equity realized volatility over 6 months
+avg_corr_12m,market_risk,12.0,Average pairwise cross-asset correlation over 12 months
+equity_drawdown_12m,market_risk,12.0,US equity trailing drawdown over 12 months
+spx_vol_12m,market_risk,12.0,US equity realized volatility over 12 months
