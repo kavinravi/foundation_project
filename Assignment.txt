@@ -1,0 +1,55 @@
+Objective
+The Whitmore family has retained your team as external investment consultants. Your mandate is twofold: first, construct a Strategic Asset Allocation (SAA) that satisfies every constraint in the Whitmore Investment Policy Statement; second, design and backtest a Tactical Asset Allocation (TAA) overlay that dynamically adjusts your SAA weights with the goal of improving the portfolio's risk-adjusted return profile.
+
+Deliver a professional research report and presentation as if addressing the Whitmore Investment Principal. Your team must demonstrate rigorous walk-forward backtesting, honest trial disclosure, and a clear investment recommendation.
+
+Team Structure
+This is a team project (2 students per team). Both team members are expected to contribute equally to all components: research, coding, analysis, writing, and presentation. Individual contribution may be assessed during the Q&A.
+
+Client ContextDownload the Whitmore IPS (PDF)
+Whitmore Capital Partners is a single-family office managing approximately $1.8 billion in diversified financial assets. The attached Investment Policy Statement (IPS) is the single source of truth for all objectives, risk limits, asset classes, benchmarks, and constraints governing this engagement.
+
+Download the Whitmore IPS (PDF)
+
+Read the entire IPS before writing any code. The IPS contains all binding constraints, benchmark definitions, and policy rules your team needs. Do not assume constraints from other assignments or courses apply here. If the IPS states it, follow it. If it does not state it, justify your choice.
+
+Data Access
+Asset class data is provided via the Zion Google Drive folder. The data key file describes every available series, including ticker, asset class, currency, frequency, and date range. Signal data for your TAA overlay is student-sourced.
+
+Zion Data	Google Drive FolderLinks to an external site.
+Data Key	Included in the folder. Maps column names to asset descriptions, tickers, and date ranges.
+Signal Data	Student-sourced. You must obtain your own signal data (e.g. FRED, Yahoo Finance, or other public sources). Document your source clearly in the report. Any external data files must be included in your zip upload (see Submission Format).
+Methodology
+Backtest Approach	Point-in-Time (PIT) / Expanding Universe: An asset enters the investable universe on its first-valid date and stays in thereafter. Use the maximum time available for your backtesting.
+Investment Universe	The SAA universe and Opportunistic sleeve are defined in the IPS. Your team selects which assets to include, subject to all IPS constraints.
+Benchmarks	Benchmark 1 and Benchmark 2 are defined in the IPS with fixed weights. Both must be computed and shown in your results.
+SAA Construction	Select one portfolio construction method from those covered in class (Inverse Volatility, Minimum Variance, Risk Parity, Maximum Diversification, or Mean Variance) and apply it consistently for your SAA optimization. Explain in your report and presentation why you chose this method over the alternatives. All IPS constraints must be satisfied.
+TAA Signal & Design	Design your own signal with a clear economic rationale. State your hypothesis before presenting results. You are encouraged to innovate: test different indicators and approaches, whether statistical, macroeconomic, or machine-learning driven. When your signal triggers, use a portfolio construction method to dynamically re-optimize weights within the TAA bands defined in the IPS. Do not hard-code a fixed "safe haven" allocation for risk-off periods, as this introduces lookahead bias and other selection biases.
+TAA Validation	Walk-forward with expanding training window. Minimum 3 out-of-sample test folds required. More folds are encouraged given that data is available from 2003 onward.
+Rebalancing	As defined in the IPS. SAA rebalances annually on the last trading day of each calendar year.
+Transaction Costs	As defined in the IPS. Apply to all turnover at every rebalance.
+Constraints	All hard constraints from the IPS, including any amendments. Your team is responsible for identifying and applying the correct binding thresholds.
+Deliverables: Research Report
+Your team writes a professional research report addressed to the Whitmore Investment Principal. You decide the structure, narrative, and level of detail based on what you believe the client needs to see. The IPS describes the information the client expects. Use it as a guide, not a template.
+
+Your report must include at minimum:
+
+#	Required Element
+1	Performance Chart: A single chart showing the cumulative growth of all 4 portfolios side-by-side: Benchmark 1, Benchmark 2, your team's SAA, and your SAA with TAA overlay. Same time axis, same starting value (index 100, max. time period available).
+2	Performance Metrics Table: A side-by-side comparison of all four portfolios on at minimum: Return p.a., Volatility p.a., Max Drawdown, VaR 95% (historical), Sharpe Ratio (rf = 2%), and Calmar Ratio.
+3	SAA and TAA Contribution: Clearly show and discuss the individual contribution of the SAA model and the TAA overlay to overall portfolio performance. The reader must be able to understand what value each layer adds independently.
+4	TAA Signal Rationale: What signal(s) do you use and why? State your hypothesis and economic reasoning before presenting results.
+5	Walk-Forward Evidence: Show your train/test split structure and out-of-sample results. Demonstrate that your TAA signal was validated on data it was not trained on.
+6	Recommendation: Does the TAA overlay add value after costs? Under what conditions does it work or fail? What do you recommend to the Investment Principal?
+ 
+
+Beyond these above requirements, your team decides what additional analysis, charts, tables, or commentary to include. Quality and relevance matter more than volume.
+
+Submission Format
+Submit a single .zip file via Canvas containing:
+
+#	File	Requirements
+1	Report PDF	Maximum 12 pages (all-in, including any appendix). DIN A4, normal margins, professional layout, portrait format.
+2	Presentation PDF	Slide deck used during your in-class presentation. PDF format only.
+3	Python Script	Complete, self-contained Python code that reproduces your results end-to-end. The script must run without manual intervention and generate all charts, tables, and metrics shown in your report. Include clear comments and a requirements section at the top.
+4	External Data	If your TAA signal uses any data not provided in the Zion Google Drive folder (e.g. VIX Index, credit spreads, FRED series), you must include those data files (csv only) in the zip. I will run your Python script to replicate your results; missing data makes replication impossible.
