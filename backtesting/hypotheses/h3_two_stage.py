@@ -37,9 +37,10 @@ class TwoStageRegimeHypothesis(Hypothesis):
         signal_when_active=-1,
         tilt={
             "US Equity": -0.12,
-            "REITs": -0.05,
+            "US REITs": -0.05,
             "Bitcoin": -0.03,
-            "US Bonds": +0.12,
+            "US Treasuries": +0.09,
+            "US TIPS": +0.04,
             "Gold": +0.05,
             "JPY": +0.03,
         },

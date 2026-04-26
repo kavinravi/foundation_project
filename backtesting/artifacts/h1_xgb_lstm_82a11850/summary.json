@@ -1,0 +1,51 @@
+{
+  "hypothesis": "h1",
+  "model": "xgb_lstm",
+  "active_assets": [
+    "US Equity",
+    "US Treasuries",
+    "US TIPS",
+    "US REITs",
+    "Gold",
+    "Bitcoin",
+    "JPY"
+  ],
+  "threshold": 0.5,
+  "sequence_length": 6,
+  "folds_used": 12,
+  "n_signals_fired": 61,
+  "saa_metrics": {
+    "total_return_pa": 0.08494392416796259,
+    "cumulative_return": 5.351061186343521,
+    "volatility_pa": 0.10408258407651845,
+    "historical_var_95_daily": -0.009257336344455525,
+    "sharpe_rf2": 0.64443004156293,
+    "calmar": 0.27812256227571436,
+    "max_drawdown": -0.3054190335113991
+  },
+  "taa_metrics": {
+    "total_return_pa": 0.09519363418662508,
+    "cumulative_return": 6.860329129770946,
+    "volatility_pa": 0.09113661752986667,
+    "historical_var_95_daily": -0.008487452678467438,
+    "sharpe_rf2": 0.824176593760402,
+    "calmar": 0.50852159267183,
+    "max_drawdown": -0.18719683796801423
+  },
+  "benchmark_metrics": null,
+  "ips_pass_count_taa": 3,
+  "ips_pass_count_saa": 2,
+  "ips_objective_taa": 18.313982131125584,
+  "ips_objective_saa": 1037.9976726931354,
+  "return_gap_taa": 0.0,
+  "vol_gap_taa": 0.0,
+  "drawdown_gap_taa": 0.0,
+  "ips_loss_taa": 18.313982131125584,
+  "ips_loss_saa": 1037.9976726931354,
+  "delta_drawdown": 0.11822219554338487,
+  "delta_return": 0.010249710018662483,
+  "delta_vol": -0.012945966546651783,
+  "delta_sharpe": 0.17974655219747193,
+  "elapsed_seconds": 15.534783601760864,
+  "notes": "asset_setup=ips_available; assets=['US Equity', 'US Treasuries', 'US TIPS', 'US REITs', 'Gold', 'Bitcoin', 'JPY']; taa_band=0.5; risk_aversion=4.0; bl_tau=0.05; regime_view_scale=2.0"
+}

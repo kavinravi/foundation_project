@@ -17,6 +17,16 @@ from torch.utils.data import DataLoader, TensorDataset
 
 from backtesting.models.base import BaseModel, ModelConfig, standardise
 
+if hasattr(torch, "set_float32_matmul_precision"):
+    torch.set_float32_matmul_precision("high")
+if torch.cuda.is_available():
+    if hasattr(torch.backends.cuda.matmul, "allow_tf32"):
+        torch.backends.cuda.matmul.allow_tf32 = True
+    if hasattr(torch.backends.cudnn, "allow_tf32"):
+        torch.backends.cudnn.allow_tf32 = True
+    if hasattr(torch.backends.cudnn, "benchmark"):
+        torch.backends.cudnn.benchmark = True
+
 
 class _LSTMNet(nn.Module):
     def __init__(self, n_features: int, hidden: int, num_layers: int, dropout: float) -> None:
@@ -51,11 +61,12 @@ def _build_sequences(
         return np.empty((0, seq_len, n_feat), dtype=np.float32), None, []
 
     sequences = np.lib.stride_tricks.sliding_window_view(arr, (seq_len, n_feat))[:, 0, :, :]
+    sequences = np.ascontiguousarray(sequences, dtype=np.float32)
     sequence_index = list(X.index[seq_len - 1 :])
     if y is not None:
         labels = y.reindex(sequence_index).to_numpy(dtype=np.float32)
-        return sequences.astype(np.float32, copy=False), labels, sequence_index
-    return sequences.astype(np.float32, copy=False), None, sequence_index
+        return sequences, labels, sequence_index
+    return sequences, None, sequence_index
 
 
 class LSTMModel(BaseModel):

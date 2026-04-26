@@ -1,7 +1,0 @@
-date,active_assets,active_count,max_investable_weight,feasible_under_caps,is_full_universe
-1976-01-01,JPY,1,0.25,False,False
-1976-01-02,"Gold, JPY",2,0.25,False,False
-1976-01-30,"US Bonds, Gold, JPY",3,0.55,False,False
-1989-09-11,"US Equity, US Bonds, Gold, JPY",4,0.85,False,False
-2003-03-31,"US Equity, US Bonds, REITs, Gold, JPY",5,1.15,True,False
-2010-07-19,"US Equity, US Bonds, REITs, Gold, Bitcoin, JPY",6,1.15,True,True

@@ -68,8 +68,8 @@ def equity_drawdown_event_label(
 ) -> pd.Series:
     """Binary label: did the next month see a meaningful equity downside?
 
-    Mirrors the construction used in the legacy build_assignment_4 pipeline so
-    that results between the new framework and prior work stay comparable.
+    Mirrors the earlier baseline construction so results stay comparable
+    without coupling the live framework to `build_assignment_4.py`.
     """
     equity = panel.prices["US Equity"].dropna()
     monthly_index = monthly_resample(equity).index
@@ -113,7 +113,7 @@ def stagflation_label(
 ) -> pd.Series:
     """Binary label: equity weakens AND TIPS outperforms Treasuries forward."""
     equity = panel.prices["US Equity"].dropna()
-    bonds = panel.prices["US Bonds"].dropna()
+    bonds = panel.prices["US Treasuries"].dropna()
     tips = panel.tips.dropna()
     monthly_index = monthly_resample(equity).index
     labels: dict[pd.Timestamp, int] = {}

@@ -1,5 +1,0 @@
-model_family,model_label,trigger_rule,validation_max_drawdown,validation_cagr,validation_trigger_rate
-Logistic,Logistic regression,p >= 0.25,-0.09541597990635065,0.03785958548574514,0.875
-Ensemble,Logistic OR BayesXGBoost,logit >= 0.40 or xgb >= 0.25,-0.10216543433915215,0.03926136660971302,0.375
-BayesXGBoost,Bayes-tuned XGBoost,p >= 0.40,-0.12321165449511753,0.05614553730917887,0.0
-SARIMAX,"SARIMAX(1,0,0)+macro",forecast < -0.2%,-0.12321165449511753,0.05614553730917887,0.0

@@ -3,8 +3,8 @@
 Signals: HY OAS, VIX, SPX trend, RTY/SPX relative performance.
 
 When stress rises (model probability ≥ threshold), tilt away from risk
-assets (Equity, REITs, Bitcoin) and towards defensive assets (Bonds, Gold,
-JPY). The framework enforces the IPS bands.
+assets (Equity, REITs, Bitcoin) and towards defensive assets (Treasuries,
+TIPS, Gold, JPY). The framework enforces the IPS bands.
 """
 
 from __future__ import annotations
@@ -35,9 +35,10 @@ class MarketStressHypothesis(Hypothesis):
         signal_when_active=-1,  # risk-off
         tilt={
             "US Equity": -0.10,
-            "REITs": -0.05,
+            "US REITs": -0.05,
             "Bitcoin": -0.03,
-            "US Bonds": +0.10,
+            "US Treasuries": +0.08,
+            "US TIPS": +0.04,
             "Gold": +0.05,
             "JPY": +0.03,
         },

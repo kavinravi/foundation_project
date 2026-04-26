@@ -1,133 +1,46 @@
-timestamp	hypothesis	model	threshold	ips_loss	ips_pass	delta_dd	delta_ret	status	description
-2026-04-24 20:17:14	h1	xgb	0.500	6.7356	1	0.0044	-0.0003	baseline	baseline xgb/h1
-2026-04-24 20:17:32	h1	lstm	0.550	6.3152	1	0.0078	0.0005	baseline	baseline lstm/h1
-2026-04-24 20:18:13	h1	transformer	0.550	7.1022	1	-0.0001	0.0004	baseline	baseline transformer/h1
-2026-04-24 20:18:15	h2	xgb	0.500	7.4414	2	-0.0062	0.0116	baseline	baseline xgb/h2
-2026-04-24 20:18:29	h2	lstm	0.550	7.7530	2	-0.0093	0.0061	baseline	baseline lstm/h2
-2026-04-24 20:19:06	h2	transformer	0.550	6.9065	1	-0.0001	0.0024	baseline	baseline transformer/h2
-2026-04-24 20:19:07	h3	xgb	0.500	6.7331	1	0.0033	0.0008	baseline	baseline xgb/h3
-2026-04-24 20:19:21	h3	lstm	0.550	7.0410	1	-0.0001	0.0010	baseline	baseline lstm/h3
-2026-04-24 20:19:46	h3	transformer	0.550	6.3429	1	0.0078	0.0002	baseline	baseline transformer/h3
-2026-04-24 20:19:48	h4	xgb	0.500	7.2406	1	-0.0001	-0.0009	baseline	baseline xgb/h4
-2026-04-24 20:20:01	h4	lstm	0.550	6.7771	1	0.0039	-0.0002	baseline	baseline lstm/h4
-2026-04-24 20:20:40	h4	transformer	0.550	7.1439	1	-0.0001	0.0000	baseline	baseline transformer/h4
-2026-04-24 20:23:13	h1	xgb	0.400	6.6707	1	0.0057	-0.0010	search	search thr=0.4 scale=1.0
-2026-04-24 20:23:14	h1	xgb	0.400	6.5897	1	0.0064	-0.0008	search	search thr=0.4 scale=1.5
-2026-04-24 20:23:16	h1	xgb	0.500	6.7356	1	0.0044	-0.0003	search	search thr=0.5 scale=1.0
-2026-04-24 20:23:18	h1	xgb	0.500	6.6720	1	0.0049	-0.0002	search	search thr=0.5 scale=1.5
-2026-04-24 20:23:19	h1	xgb	0.550	6.6557	1	0.0044	0.0005	search	search thr=0.55 scale=1.0
-2026-04-24 20:23:21	h1	xgb	0.550	6.5955	1	0.0049	0.0006	search	search thr=0.55 scale=1.5
-2026-04-24 20:23:22	h1	xgb	0.600	6.6523	1	0.0044	0.0005	search	search thr=0.6 scale=1.0
-2026-04-24 20:23:24	h1	xgb	0.600	6.5786	1	0.0051	0.0005	search	search thr=0.6 scale=1.5
-2026-04-24 20:23:25	h1	xgb	0.650	6.8985	1	0.0026	-0.0002	search	search thr=0.65 scale=1.0
-2026-04-24 20:23:27	h1	xgb	0.650	6.8447	1	0.0031	-0.0002	search	search thr=0.65 scale=1.5
-2026-04-24 20:23:41	h1	lstm	0.400	6.0742	1	0.0123	-0.0016	search	search thr=0.4 scale=1.0
-2026-04-24 20:23:55	h1	lstm	0.400	5.8774	1	0.0138	-0.0012	search	search thr=0.4 scale=1.5
-2026-04-24 20:24:11	h1	lstm	0.500	6.1257	1	0.0123	-0.0021	search	search thr=0.5 scale=1.0
-2026-04-24 20:24:26	h1	lstm	0.500	5.9310	1	0.0138	-0.0017	search	search thr=0.5 scale=1.5
-2026-04-24 20:24:40	h1	lstm	0.550	6.3152	1	0.0078	0.0005	search	search thr=0.55 scale=1.0
-2026-04-24 20:24:53	h1	lstm	0.550	6.2776	1	0.0081	0.0006	search	search thr=0.55 scale=1.5
-2026-04-24 20:25:08	h1	lstm	0.600	6.6530	1	0.0045	0.0003	search	search thr=0.6 scale=1.0
-2026-04-24 20:25:21	h1	lstm	0.600	6.6497	1	0.0045	0.0004	search	search thr=0.6 scale=1.5
-2026-04-24 20:25:35	h1	lstm	0.650	7.1274	1	-0.0001	0.0002	search	search thr=0.65 scale=1.0
-2026-04-24 20:25:49	h1	lstm	0.650	7.1157	1	-0.0001	0.0003	search	search thr=0.65 scale=1.5
-2026-04-24 20:26:33	h1	transformer	0.400	6.9039	1	0.0044	-0.0020	search	search thr=0.4 scale=1.0
-2026-04-24 20:27:18	h1	transformer	0.400	6.7129	1	0.0055	-0.0013	search	search thr=0.4 scale=1.5
-2026-04-24 20:27:55	h1	transformer	0.500	6.8785	1	0.0044	-0.0017	search	search thr=0.5 scale=1.0
-2026-04-24 20:28:35	h1	transformer	0.500	6.6912	1	0.0055	-0.0010	search	search thr=0.5 scale=1.5
-2026-04-24 20:29:14	h1	transformer	0.550	7.1022	1	-0.0001	0.0004	search	search thr=0.55 scale=1.0
-2026-04-24 20:29:55	h1	transformer	0.550	7.0701	1	-0.0001	0.0008	search	search thr=0.55 scale=1.5
-2026-04-24 20:30:32	h1	transformer	0.600	7.1022	1	-0.0001	0.0004	search	search thr=0.6 scale=1.0
-2026-04-24 20:31:19	h1	transformer	0.600	7.0701	1	-0.0001	0.0008	search	search thr=0.6 scale=1.5
-2026-04-24 20:32:01	h1	transformer	0.650	7.1022	1	-0.0001	0.0004	search	search thr=0.65 scale=1.0
-2026-04-24 20:32:38	h1	transformer	0.650	7.0701	1	-0.0001	0.0008	search	search thr=0.65 scale=1.5
-2026-04-24 20:32:40	h2	xgb	0.400	8.5067	2	-0.0168	0.0089	search	search thr=0.4 scale=1.0
-2026-04-24 20:32:41	h2	xgb	0.400	9.2642	2	-0.0244	0.0135	search	search thr=0.4 scale=1.5
-2026-04-24 20:32:43	h2	xgb	0.500	7.4414	2	-0.0062	0.0116	search	search thr=0.5 scale=1.0
-2026-04-24 20:32:45	h2	xgb	0.500	7.9210	2	-0.0111	0.0156	search	search thr=0.5 scale=1.5
-2026-04-24 20:32:46	h2	xgb	0.550	5.8728	2	0.0095	0.0085	search	search thr=0.55 scale=1.0
-2026-04-24 20:32:48	h2	xgb	0.550	5.7975	2	0.0102	0.0108	search	search thr=0.55 scale=1.5
-2026-04-24 20:32:49	h2	xgb	0.600	4.9207	2	0.0191	0.0059	search	search thr=0.6 scale=1.0
-2026-04-24 20:32:51	h2	xgb	0.600	4.3861	2	0.0244	0.0078	search	search thr=0.6 scale=1.5
-2026-04-24 20:32:52	h2	xgb	0.650	4.9226	2	0.0191	0.0044	search	search thr=0.65 scale=1.0
-2026-04-24 20:32:54	h2	xgb	0.650	4.3883	2	0.0244	0.0061	search	search thr=0.65 scale=1.5
-2026-04-24 20:33:10	h2	lstm	0.400	12.1183	2	-0.0530	0.0237	search	search thr=0.4 scale=1.0
-2026-04-24 20:33:25	h2	lstm	0.400	13.3334	2	-0.0652	0.0329	search	search thr=0.4 scale=1.5
-2026-04-24 20:33:42	h2	lstm	0.500	12.1177	2	-0.0530	0.0240	search	search thr=0.5 scale=1.0
-2026-04-24 20:33:57	h2	lstm	0.500	13.3325	2	-0.0652	0.0333	search	search thr=0.5 scale=1.5
-2026-04-24 20:34:13	h2	lstm	0.550	7.7530	2	-0.0093	0.0061	search	search thr=0.55 scale=1.0
-2026-04-24 20:34:28	h2	lstm	0.550	8.0911	2	-0.0127	0.0089	search	search thr=0.55 scale=1.5
-2026-04-24 20:34:41	h2	lstm	0.600	6.8332	2	-0.0001	0.0049	search	search thr=0.6 scale=1.0
-2026-04-24 20:34:56	h2	lstm	0.600	6.8304	2	-0.0001	0.0074	search	search thr=0.6 scale=1.5
-2026-04-24 20:35:12	h2	lstm	0.650	6.8293	2	-0.0001	0.0062	search	search thr=0.65 scale=1.0
-2026-04-24 20:35:27	h2	lstm	0.650	6.8256	2	-0.0001	0.0090	search	search thr=0.65 scale=1.5
-2026-04-24 20:35:58	h2	transformer	0.400	12.1195	2	-0.0530	0.0212	search	search thr=0.4 scale=1.0
-2026-04-24 20:36:33	h2	transformer	0.400	13.3347	2	-0.0652	0.0296	search	search thr=0.4 scale=1.5
-2026-04-24 20:37:04	h2	transformer	0.500	12.1204	2	-0.0530	0.0203	search	search thr=0.5 scale=1.0
-2026-04-24 20:37:40	h2	transformer	0.500	13.3357	2	-0.0652	0.0286	search	search thr=0.5 scale=1.5
-2026-04-24 20:38:13	h2	transformer	0.550	6.9065	1	-0.0001	0.0024	search	search thr=0.55 scale=1.0
-2026-04-24 20:38:48	h2	transformer	0.550	6.8329	2	-0.0001	0.0044	search	search thr=0.55 scale=1.5
-2026-04-24 20:39:23	h2	transformer	0.600	6.8676	1	-0.0001	0.0028	search	search thr=0.6 scale=1.0
-2026-04-24 20:39:59	h2	transformer	0.600	6.8321	2	-0.0001	0.0048	search	search thr=0.6 scale=1.5
-2026-04-24 20:40:34	h2	transformer	0.650	6.8676	1	-0.0001	0.0028	search	search thr=0.65 scale=1.0
-2026-04-24 20:41:05	h2	transformer	0.650	6.8321	2	-0.0001	0.0048	search	search thr=0.65 scale=1.5
-2026-04-24 20:41:07	h3	xgb	0.400	6.8096	1	0.0032	0.0001	search	search thr=0.4 scale=1.0
-2026-04-24 20:41:08	h3	xgb	0.400	6.7439	1	0.0037	0.0003	search	search thr=0.4 scale=1.5
-2026-04-24 20:41:10	h3	xgb	0.500	6.7331	1	0.0033	0.0008	search	search thr=0.5 scale=1.0
-2026-04-24 20:41:12	h3	xgb	0.500	6.7230	1	0.0033	0.0009	search	search thr=0.5 scale=1.5
-2026-04-24 20:41:13	h3	xgb	0.550	6.7334	1	0.0033	0.0008	search	search thr=0.55 scale=1.0
-2026-04-24 20:41:15	h3	xgb	0.550	6.7225	1	0.0033	0.0009	search	search thr=0.55 scale=1.5
-2026-04-24 20:41:16	h3	xgb	0.600	6.7240	1	0.0039	0.0003	search	search thr=0.6 scale=1.0
-2026-04-24 20:41:18	h3	xgb	0.600	6.6808	1	0.0043	0.0003	search	search thr=0.6 scale=1.5
-2026-04-24 20:41:19	h3	xgb	0.650	6.8301	1	0.0032	-0.0000	search	search thr=0.65 scale=1.0
-2026-04-24 20:41:21	h3	xgb	0.650	6.7829	1	0.0036	0.0000	search	search thr=0.65 scale=1.5
-2026-04-24 20:41:33	h3	lstm	0.400	5.9191	1	0.0123	-0.0001	search	search thr=0.4 scale=1.0
-2026-04-24 20:41:48	h3	lstm	0.400	5.6915	1	0.0138	0.0007	search	search thr=0.4 scale=1.5
-2026-04-24 20:42:01	h3	lstm	0.500	6.9178	1	0.0037	-0.0015	search	search thr=0.5 scale=1.0
-2026-04-24 20:42:14	h3	lstm	0.500	6.7768	1	0.0045	-0.0009	search	search thr=0.5 scale=1.5
-2026-04-24 20:42:27	h3	lstm	0.550	7.0410	1	-0.0001	0.0010	search	search thr=0.55 scale=1.0
-2026-04-24 20:42:40	h3	lstm	0.550	7.0144	1	-0.0001	0.0013	search	search thr=0.55 scale=1.5
-2026-04-24 20:42:53	h3	lstm	0.600	7.1138	1	-0.0001	0.0003	search	search thr=0.6 scale=1.0
-2026-04-24 20:43:07	h3	lstm	0.600	7.0867	1	-0.0001	0.0006	search	search thr=0.6 scale=1.5
-2026-04-24 20:43:19	h3	lstm	0.650	7.1162	1	-0.0001	0.0003	search	search thr=0.65 scale=1.0
-2026-04-24 20:43:31	h3	lstm	0.650	7.0910	1	-0.0001	0.0006	search	search thr=0.65 scale=1.5
-2026-04-24 20:43:58	h3	transformer	0.400	6.0021	1	0.0123	-0.0009	search	search thr=0.4 scale=1.0
-2026-04-24 20:44:24	h3	transformer	0.400	5.7843	1	0.0138	-0.0003	search	search thr=0.4 scale=1.5
-2026-04-24 20:44:53	h3	transformer	0.500	6.1375	1	0.0123	-0.0023	search	search thr=0.5 scale=1.0
-2026-04-24 20:45:19	h3	transformer	0.500	5.9391	1	0.0138	-0.0018	search	search thr=0.5 scale=1.5
-2026-04-24 20:45:48	h3	transformer	0.550	6.3429	1	0.0078	0.0002	search	search thr=0.55 scale=1.0
-2026-04-24 20:46:14	h3	transformer	0.550	6.2984	1	0.0081	0.0004	search	search thr=0.55 scale=1.5
-2026-04-24 20:46:40	h3	transformer	0.600	6.6678	1	0.0045	0.0002	search	search thr=0.6 scale=1.0
-2026-04-24 20:47:08	h3	transformer	0.600	6.6555	1	0.0045	0.0003	search	search thr=0.6 scale=1.5
-2026-04-24 20:47:37	h3	transformer	0.650	6.8503	1	0.0028	0.0001	search	search thr=0.65 scale=1.0
-2026-04-24 20:48:04	h3	transformer	0.650	6.8484	1	0.0027	0.0003	search	search thr=0.65 scale=1.5
-2026-04-24 20:48:05	h4	xgb	0.400	7.2577	1	-0.0001	-0.0011	search	search thr=0.4 scale=1.0
-2026-04-24 20:48:06	h4	xgb	0.400	7.2620	1	-0.0001	-0.0011	search	search thr=0.4 scale=1.5
-2026-04-24 20:48:08	h4	xgb	0.500	7.2406	1	-0.0001	-0.0009	search	search thr=0.5 scale=1.0
-2026-04-24 20:48:09	h4	xgb	0.500	7.2332	1	-0.0001	-0.0008	search	search thr=0.5 scale=1.5
-2026-04-24 20:48:11	h4	xgb	0.550	7.2266	1	-0.0001	-0.0008	search	search thr=0.55 scale=1.0
-2026-04-24 20:48:12	h4	xgb	0.550	7.2214	1	-0.0001	-0.0007	search	search thr=0.55 scale=1.5
-2026-04-24 20:48:14	h4	xgb	0.600	7.2020	1	-0.0001	-0.0005	search	search thr=0.6 scale=1.0
-2026-04-24 20:48:15	h4	xgb	0.600	7.1990	1	-0.0001	-0.0005	search	search thr=0.6 scale=1.5
-2026-04-24 20:48:17	h4	xgb	0.650	7.1755	1	-0.0001	-0.0003	search	search thr=0.65 scale=1.0
-2026-04-24 20:48:18	h4	xgb	0.650	7.1750	1	-0.0001	-0.0003	search	search thr=0.65 scale=1.5
-2026-04-24 20:48:30	h4	lstm	0.400	5.5482	1	0.0152	0.0007	search	search thr=0.4 scale=1.0
-2026-04-24 20:48:43	h4	lstm	0.400	5.2050	1	0.0174	0.0019	search	search thr=0.4 scale=1.5
-2026-04-24 20:48:57	h4	lstm	0.500	5.6363	1	0.0152	-0.0001	search	search thr=0.5 scale=1.0
-2026-04-24 20:49:10	h4	lstm	0.500	5.2996	1	0.0174	0.0010	search	search thr=0.5 scale=1.5
-2026-04-24 20:49:23	h4	lstm	0.550	6.7771	1	0.0039	-0.0002	search	search thr=0.55 scale=1.0
-2026-04-24 20:49:35	h4	lstm	0.550	6.7222	1	0.0043	-0.0001	search	search thr=0.55 scale=1.5
-2026-04-24 20:49:48	h4	lstm	0.600	6.8056	1	0.0039	-0.0005	search	search thr=0.6 scale=1.0
-2026-04-24 20:50:01	h4	lstm	0.600	6.7595	1	0.0043	-0.0004	search	search thr=0.6 scale=1.5
-2026-04-24 20:50:14	h4	lstm	0.650	6.7802	1	0.0039	-0.0003	search	search thr=0.65 scale=1.0
-2026-04-24 20:50:27	h4	lstm	0.650	6.7346	1	0.0043	-0.0002	search	search thr=0.65 scale=1.5
-2026-04-24 20:51:11	h4	transformer	0.400	5.9776	1	0.0110	0.0006	search	search thr=0.4 scale=1.0
-2026-04-24 20:51:52	h4	transformer	0.400	5.6970	1	0.0129	0.0016	search	search thr=0.4 scale=1.5
-2026-04-24 20:52:36	h4	transformer	0.500	6.0161	1	0.0110	0.0002	search	search thr=0.5 scale=1.0
-2026-04-24 20:53:18	h4	transformer	0.500	5.7473	1	0.0129	0.0011	search	search thr=0.5 scale=1.5
-2026-04-24 20:53:59	h4	transformer	0.550	7.1439	1	-0.0001	0.0000	search	search thr=0.55 scale=1.0
-2026-04-24 20:54:47	h4	transformer	0.550	7.1351	1	-0.0001	0.0001	search	search thr=0.55 scale=1.5
-2026-04-24 20:55:30	h4	transformer	0.600	7.1439	1	-0.0001	0.0000	search	search thr=0.6 scale=1.0
-2026-04-24 20:56:13	h4	transformer	0.600	7.1351	1	-0.0001	0.0001	search	search thr=0.6 scale=1.5
-2026-04-24 20:56:57	h4	transformer	0.650	7.1439	1	-0.0001	0.0000	search	search thr=0.65 scale=1.0
-2026-04-24 20:57:41	h4	transformer	0.650	7.1351	1	-0.0001	0.0001	search	search thr=0.65 scale=1.5
+timestamp	hypothesis	model	threshold	ips_objective	ips_pass	delta_dd	delta_ret	status	description
+2026-04-25 22:57:40	h1	xgb_lstm	0.550	1026.8627	2	0.0487	0.0094	keep	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | smoke Whitmore hybrid xgb+lstm no-lookahead SAA base
+2026-04-25 22:58:06	h1	xgb_lstm	0.550	1026.8627	2	0.0487	0.0094	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 22:58:23	h1	xgb_transformer	0.550	1027.5790	2	0.0480	0.0050	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_transformer/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 22:58:38	h2	xgb_lstm	0.550	1038.7835	2	0.0013	0.0067	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h2/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 22:58:55	h2	xgb_transformer	0.550	1038.2901	2	0.0053	0.0026	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h2/xgb_transformer/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 22:59:12	h3	xgb_lstm	0.550	1038.9720	2	-0.0051	-0.0021	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h3/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 22:59:32	h3	xgb_transformer	0.550	1037.3014	2	0.0011	0.0034	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h3/xgb_transformer/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 22:59:46	h4	xgb_lstm	0.550	1037.5357	2	-0.0001	0.0015	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h4/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:00:02	h4	xgb_transformer	0.550	1037.3548	2	-0.0001	0.0030	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h4/xgb_transformer/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:00:37	h1	xgb_lstm	0.450	1032.1191	2	0.0239	0.0085	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.45/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:00:53	h1	xgb_lstm	0.450	1032.1191	2	0.0239	0.0085	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.45/band=0.75/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:01:10	h1	xgb_lstm	0.450	1032.1191	2	0.0239	0.0085	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.45/band=1.0/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:01:26	h1	xgb_lstm	0.500	1026.8154	2	0.0487	0.0101	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:01:41	h1	xgb_lstm	0.500	1026.8154	2	0.0487	0.0101	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.5/band=0.75/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:01:55	h1	xgb_lstm	0.500	1026.8154	2	0.0487	0.0101	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.5/band=1.0/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:02:09	h1	xgb_lstm	0.550	1026.8627	2	0.0487	0.0094	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:02:26	h1	xgb_lstm	0.550	1026.8627	2	0.0487	0.0094	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.75/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:02:41	h1	xgb_lstm	0.550	1026.8627	2	0.0487	0.0094	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=1.0/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:02:55	h1	xgb_lstm	0.600	1035.5283	2	0.0087	0.0068	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.6/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:03:10	h1	xgb_lstm	0.600	1035.5283	2	0.0087	0.0068	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.6/band=0.75/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:03:24	h1	xgb_lstm	0.600	1035.5283	2	0.0087	0.0068	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.6/band=1.0/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:03:44	h1	xgb_lstm	0.500	2030.8584	1	0.0478	-0.0043	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold | h1/xgb_lstm/assets=policy_core/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:03:57	h1	xgb_lstm	0.550	2030.6167	1	0.0478	-0.0029	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold | h1/xgb_lstm/assets=policy_core/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:04:09	h1	xgb_lstm	0.500	1026.6001	2	0.0487	0.0129	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:04:21	h1	xgb_lstm	0.550	1026.6814	2	0.0487	0.0119	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:04:35	h1	xgb_lstm	0.500	1027.6284	2	0.0661	-0.0016	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,JPY | h1/xgb_lstm/assets=policy_plus_jpy/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:04:47	h1	xgb_lstm	0.550	1027.4839	2	0.0661	-0.0007	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,JPY | h1/xgb_lstm/assets=policy_plus_jpy/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:05:03	h1	xgb_transformer	0.500	2038.3199	1	0.0160	-0.0080	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold | h1/xgb_transformer/assets=policy_core/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:05:17	h1	xgb_transformer	0.550	2038.1307	1	0.0160	-0.0067	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold | h1/xgb_transformer/assets=policy_core/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:05:33	h1	xgb_transformer	0.500	1029.0070	2	0.0390	0.0082	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_transformer/assets=policy_plus_bitcoin/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:05:47	h1	xgb_transformer	0.550	1029.1358	2	0.0390	0.0070	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_transformer/assets=policy_plus_bitcoin/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:06:01	h1	xgb_transformer	0.500	2032.2975	1	0.0419	-0.0056	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,JPY | h1/xgb_transformer/assets=policy_plus_jpy/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:06:15	h1	xgb_transformer	0.550	2032.1919	1	0.0419	-0.0047	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,JPY | h1/xgb_transformer/assets=policy_plus_jpy/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=0.5
+2026-04-25 23:06:44	h1	xgb_lstm	0.500	20.8524	3	0.0962	0.0101	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=1.0
+2026-04-25 23:06:59	h1	xgb_lstm	0.500	19.4217	3	0.1090	0.0098	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=1.5
+2026-04-25 23:07:15	h1	xgb_lstm	0.500	18.3140	3	0.1182	0.0102	search	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=2.0
+2026-04-25 23:07:29	h1	xgb_lstm	0.550	21.0543	3	0.0962	0.0084	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=1.0
+2026-04-25 23:07:42	h1	xgb_lstm	0.550	19.6431	3	0.1090	0.0079	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=1.5
+2026-04-25 23:07:59	h1	xgb_lstm	0.550	18.7051	3	0.1179	0.0072	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin,JPY | h1/xgb_lstm/assets=ips_available/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=2.0
+2026-04-25 23:08:09	h1	xgb_lstm	0.500	21.3123	3	0.0917	0.0108	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=1.0
+2026-04-25 23:08:22	h1	xgb_lstm	0.500	19.7307	3	0.1037	0.0124	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=1.5
+2026-04-25 23:08:35	h1	xgb_lstm	0.500	18.6977	3	0.1149	0.0099	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.5/band=0.5/risk=4.0/tau=0.05/regime_view=2.0
+2026-04-25 23:08:45	h1	xgb_lstm	0.550	21.4722	3	0.0917	0.0093	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=1.0
+2026-04-25 23:08:59	h1	xgb_lstm	0.550	19.9471	3	0.1037	0.0106	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=1.5
+2026-04-25 23:09:11	h1	xgb_lstm	0.550	19.0022	3	0.1149	0.0074	discard	assets=US Equity,US Treasuries,US TIPS,US REITs,Gold,Bitcoin | h1/xgb_lstm/assets=policy_plus_bitcoin/seq=6/thr=0.55/band=0.5/risk=4.0/tau=0.05/regime_view=2.0

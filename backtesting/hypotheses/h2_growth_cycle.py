@@ -33,9 +33,10 @@ class GrowthCycleHypothesis(Hypothesis):
         signal_when_active=+1,  # risk-on
         tilt={
             "US Equity": +0.10,
-            "REITs": +0.05,
+            "US REITs": +0.05,
             "Bitcoin": +0.03,
-            "US Bonds": -0.10,
+            "US Treasuries": -0.08,
+            "US TIPS": -0.03,
             "Gold": -0.04,
             "JPY": -0.04,
         },

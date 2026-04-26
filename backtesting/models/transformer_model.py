@@ -20,6 +20,16 @@ from torch.utils.data import DataLoader, TensorDataset
 from backtesting.models.base import BaseModel, ModelConfig, standardise
 from backtesting.models.lstm_model import _build_sequences
 
+if hasattr(torch, "set_float32_matmul_precision"):
+    torch.set_float32_matmul_precision("high")
+if torch.cuda.is_available():
+    if hasattr(torch.backends.cuda.matmul, "allow_tf32"):
+        torch.backends.cuda.matmul.allow_tf32 = True
+    if hasattr(torch.backends.cudnn, "allow_tf32"):
+        torch.backends.cudnn.allow_tf32 = True
+    if hasattr(torch.backends.cudnn, "benchmark"):
+        torch.backends.cudnn.benchmark = True
+
 
 class _PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, max_len: int = 256) -> None:
@@ -58,7 +68,11 @@ class _TransformerNet(nn.Module):
             activation="gelu",
             norm_first=True,
         )
-        self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        self.encoder = nn.TransformerEncoder(
+            encoder_layer,
+            num_layers=num_layers,
+            enable_nested_tensor=False,
+        )
         self.norm = nn.LayerNorm(d_model)
         self.head = nn.Sequential(
             nn.Linear(d_model, d_model),

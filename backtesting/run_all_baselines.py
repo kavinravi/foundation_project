@@ -129,7 +129,7 @@ def run_one(hypothesis_name: str, model_name: str, *, panel) -> RunResult | None
     save_run_artifacts(res, signal, taa)
     append_results_tsv(res, status="baseline", description=f"baseline {model_name}/{hypothesis_name}")
     print(
-        f"   IPS: {res.ips_pass_count_taa}/3   loss={res.ips_loss_taa:.3f}   "
+        f"   IPS: {res.ips_pass_count_taa}/3   objective={res.ips_objective_taa:.3f}   "
         f"ΔDD={res.delta_drawdown:+.4f}  ΔRet={res.delta_return:+.4f}  ΔSharpe={res.delta_sharpe:+.4f}  "
         f"({elapsed:.1f}s)"
     )
@@ -213,24 +213,24 @@ def write_results_md(
         f"max DD {benchmark_metrics['max_drawdown']*100:.2f}%."
     )
     if results:
-        best_baseline = min(results, key=lambda r: r.ips_loss_taa)
+        best_baseline = min(results, key=lambda r: r.ips_objective_taa)
         m = best_baseline.taa_metrics
         lines.append(
             f"- **Best baseline TAA**: {best_baseline.hypothesis}/{best_baseline.model} "
             f"→ {best_baseline.ips_pass_count_taa}/3 IPS, "
-            f"ips_loss {best_baseline.ips_loss_taa:.3f}, "
+            f"ips_objective {best_baseline.ips_objective_taa:.3f}, "
             f"return {m['total_return_pa']*100:.2f}%, "
             f"vol {m['volatility_pa']*100:.2f}%, "
             f"max DD {m['max_drawdown']*100:.2f}%."
         )
     if search_df is not None and len(search_df) > 0:
-        best_row = search_df.sort_values("ips_loss").iloc[0]
+        best_row = search_df.sort_values("ips_objective").iloc[0]
         lines.append(
             f"- **Best searched config** (out of {len(search_df)} trials): "
             f"{best_row['hypothesis']}/{best_row['model']} with "
             f"threshold {best_row['threshold']:.2f}, tilt scale {best_row['tilt_scale']:.1f} "
             f"→ {int(best_row['ips_pass'])}/3 IPS, "
-            f"ips_loss {best_row['ips_loss']:.3f}, "
+            f"ips_objective {best_row['ips_objective']:.3f}, "
             f"return {best_row['return_pa']*100:.2f}%, "
             f"vol {best_row['vol_pa']*100:.2f}%, "
             f"max DD {best_row['max_dd']*100:.2f}% "
@@ -270,57 +270,63 @@ def write_results_md(
     lines.append("")
     lines.append("## Baseline scoreboard (all 12 combos)")
     lines.append("")
-    lines.append("Sorted by IPS loss (lower is better; 0 means all 3 IPS constraints met).")
+    lines.append("Sorted by IPS objective (lower is better).")
     lines.append("")
-    lines.append("| Rank | Hypothesis | Model | IPS pass | IPS loss | Return p.a. | Vol p.a. | Max DD | Sharpe | ΔDD vs SAA | ΔRet vs SAA |")
+    lines.append("| Rank | Hypothesis | Model | IPS pass | IPS objective | Return p.a. | Vol p.a. | Max DD | Sharpe | ΔDD vs SAA | ΔRet vs SAA |")
     lines.append("|---|---|---|---|---|---|---|---|---|---|---|")
-    sorted_results = sorted(results, key=lambda r: r.ips_loss_taa)
+    sorted_results = sorted(results, key=lambda r: r.ips_objective_taa)
     for rank, r in enumerate(sorted_results, start=1):
         m = r.taa_metrics
         lines.append(
             f"| {rank} | {r.hypothesis} | {r.model} | {r.ips_pass_count_taa}/3 | "
-            f"{r.ips_loss_taa:.3f} | {m['total_return_pa']*100:.2f}% | "
+                f"{r.ips_objective_taa:.3f} | {m['total_return_pa']*100:.2f}% | "
             f"{m['volatility_pa']*100:.2f}% | {m['max_drawdown']*100:.2f}% | "
             f"{m['sharpe_rf2']:.3f} | {r.delta_drawdown*100:+.2f}pp | {r.delta_return*100:+.2f}pp |"
         )
     lines.append("")
 
     if search_df is not None and len(search_df) > 0:
-        lines.append("## Local search scoreboard (threshold × tilt magnitude)")
+        lines.append("## Local search scoreboard")
         lines.append("")
         lines.append(
-            f"`run_threshold_search.py` swept {len(search_df)} configurations: "
-            f"{sorted(search_df['threshold'].unique().tolist())} thresholds × "
-            f"{sorted(search_df['tilt_scale'].unique().tolist())} tilt-magnitude scalars × "
-            f"{sorted(search_df['hypothesis'].unique().tolist())} hypotheses × "
-            f"{sorted(search_df['model'].unique().tolist())} models. "
+            f"`run_threshold_search.py` swept {len(search_df)} configurations across "
+            f"{sorted(search_df['hypothesis'].unique().tolist())} hypotheses, "
+            f"{sorted(search_df['model'].unique().tolist())} models, "
+            f"{sorted(search_df['asset_setup'].unique().tolist())} asset sleeves, "
+            f"{sorted(search_df['taa_band'].unique().tolist())} TAA bands, "
+            f"{sorted(search_df['threshold'].unique().tolist())} thresholds, and "
+            f"{sorted(search_df['tilt_scale'].unique().tolist())} tilt scales. "
             "This is *not* the full overnight `autoresearch` loop — it's a "
             "deterministic seed search to confirm the framework can find "
             "IPS-improving configs and to give the agent good starting points."
         )
         lines.append("")
-        lines.append("**Top 10 configurations by IPS loss:**")
+        lines.append("**Top 10 configurations by IPS objective:**")
         lines.append("")
-        lines.append("| Hyp | Model | Threshold | Tilt scale | IPS pass | IPS loss | Return | Vol | Max DD | Sharpe |")
-        lines.append("|---|---|---|---|---|---|---|---|---|---|")
-        top = search_df.sort_values("ips_loss").head(10)
+        lines.append("| Hyp | Model | Sleeve | Band | Preset | Seq | Threshold | Tilt scale | IPS pass | IPS objective | Return | Vol | Max DD | Sharpe |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+        top = search_df.sort_values("ips_objective").head(10)
         for _, row in top.iterrows():
             lines.append(
-                f"| {row['hypothesis']} | {row['model']} | {row['threshold']:.2f} | "
-                f"{row['tilt_scale']:.1f} | {int(row['ips_pass'])}/3 | {row['ips_loss']:.3f} | "
+                f"| {row['hypothesis']} | {row['model']} | {row['asset_setup']} | {row['taa_band']:.2f} | "
+                f"{row.get('hp_preset', 'baseline')} | {int(row.get('seq_len', DEFAULT_SEQ_LEN))} | "
+                f"{row['threshold']:.2f} | {row['tilt_scale']:.1f} | {int(row['ips_pass'])}/3 | {row['ips_objective']:.3f} | "
                 f"{row['return_pa']*100:.2f}% | {row['vol_pa']*100:.2f}% | "
                 f"{row['max_dd']*100:.2f}% | {row['sharpe']:.3f} |"
             )
         lines.append("")
-        best_per = search_df.loc[search_df.groupby(['hypothesis', 'model'])['ips_loss'].idxmin()].sort_values('ips_loss')
-        lines.append("**Best config per (hypothesis, model) combo after local search:**")
+        best_per = search_df.loc[
+            search_df.groupby(['hypothesis', 'model', 'asset_setup'])['ips_objective'].idxmin()
+        ].sort_values('ips_objective')
+        lines.append("**Best config per (hypothesis, model, sleeve) combo after local search:**")
         lines.append("")
-        lines.append("| Hyp | Model | Threshold | Tilt scale | IPS pass | IPS loss | Max DD | Return | ΔDD vs SAA |")
-        lines.append("|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Hyp | Model | Sleeve | Band | Preset | Seq | Threshold | Tilt scale | IPS pass | IPS objective | Max DD | Return | ΔDD vs SAA |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
         for _, row in best_per.iterrows():
             lines.append(
-                f"| {row['hypothesis']} | {row['model']} | {row['threshold']:.2f} | "
-                f"{row['tilt_scale']:.1f} | {int(row['ips_pass'])}/3 | {row['ips_loss']:.3f} | "
+                f"| {row['hypothesis']} | {row['model']} | {row['asset_setup']} | {row['taa_band']:.2f} | "
+                f"{row.get('hp_preset', 'baseline')} | {int(row.get('seq_len', DEFAULT_SEQ_LEN))} | "
+                f"{row['threshold']:.2f} | {row['tilt_scale']:.1f} | {int(row['ips_pass'])}/3 | {row['ips_objective']:.3f} | "
                 f"{row['max_dd']*100:.2f}% | {row['return_pa']*100:.2f}% | "
                 f"{row['delta_dd']*100:+.2f}pp |"
             )
@@ -361,7 +367,7 @@ def write_results_md(
         lines.append("")
         lines.append("| Model | IPS pass | Return p.a. | Vol p.a. | Max DD | Sharpe | Signals fired | Train s |")
         lines.append("|---|---|---|---|---|---|---|---|")
-        for r in sorted(section, key=lambda r: r.ips_loss_taa):
+        for r in sorted(section, key=lambda r: r.ips_objective_taa):
             m = r.taa_metrics
             lines.append(
                 f"| {r.model} | {r.ips_pass_count_taa}/3 | "
@@ -379,7 +385,7 @@ def write_results_md(
                 lines.append("| Model | Threshold | Tilt scale | IPS pass | Return p.a. | Vol p.a. | Max DD | Sharpe |")
                 lines.append("|---|---|---|---|---|---|---|---|")
                 for model_name, grp in hyp_search.groupby('model'):
-                    best = grp.sort_values('ips_loss').iloc[0]
+                    best = grp.sort_values('ips_objective').iloc[0]
                     lines.append(
                         f"| {model_name} | {best['threshold']:.2f} | {best['tilt_scale']:.1f} | "
                         f"{int(best['ips_pass'])}/3 | "
@@ -391,7 +397,7 @@ def write_results_md(
                 lines.append("")
         # Per-hypothesis interpretation
         baseline_summary = ", ".join(
-            f"{r.model} {r.ips_pass_count_taa}/3" for r in sorted(section, key=lambda r: r.ips_loss_taa)
+            f"{r.model} {r.ips_pass_count_taa}/3" for r in sorted(section, key=lambda r: r.ips_objective_taa)
         )
         lines.append(
             "**Interpretation.** "
@@ -463,17 +469,19 @@ def write_results_md(
     lines.append("### Models")
     lines.append("")
     lines.append(
-        "- **XGBoost** (`xgboost==3.2`): standard gradient-boosted trees on the "
-        "current month's features only. The tabular baseline."
+        "- **XGBoost** (`xgboost>=3`, GPU-first): standard gradient-boosted trees "
+        "on the current month's features only. Uses `device=cuda` when CUDA is "
+        "available."
     )
     lines.append(
-        "- **LSTM** (PyTorch 2.9, CUDA 12.8 on RTX 5090): two-layer LSTM with "
+        "- **LSTM** (PyTorch CUDA build on RTX 5090): two-layer LSTM with "
         "hidden=96, GELU MLP head, AdamW + cosine LR, BCE-with-logits loss "
-        "with positive-class re-weighting, 200-epoch budget with patience-30 "
-        "early stopping on the validation block. Sequence length = 12 months."
+        "with positive-class re-weighting, TF32-friendly CUDA settings, "
+        "200-epoch budget with patience-30 early stopping on the validation "
+        "block. Sequence length = 12 months."
     )
     lines.append(
-        "- **Transformer** (PyTorch 2.9, CUDA 12.8 on RTX 5090): two-layer "
+        "- **Transformer** (PyTorch CUDA build on RTX 5090): two-layer "
         "encoder, d_model=64, nhead=4, dim_ff=128, sinusoidal positional "
         "encoding, GELU activations, pre-norm. Same training recipe as the "
         "LSTM. Sequence length = 12 months."

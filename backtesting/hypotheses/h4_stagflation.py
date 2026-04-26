@@ -28,16 +28,17 @@ class StagflationHypothesis(Hypothesis):
         summary=(
             "Growth weakens (HY OAS rising, ISM falling, VIX rising) while "
             "inflation hedges (TIPS, gold) outperform Treasuries. Tilt towards "
-            "Bonds (proxy for TIPS) and Gold; keep crypto small for vol control."
+            "US TIPS and Gold; keep crypto small for vol control."
         ),
         signal_when_active=-1,
         tilt={
             "US Equity": -0.10,
-            "REITs": -0.05,
+            "US REITs": -0.05,
             "Bitcoin": -0.03,
-            "US Bonds": +0.08,
+            "US Treasuries": +0.03,
+            "US TIPS": +0.08,
             "Gold": +0.10,
-            "JPY": +0.00,
+            "JPY": +0.02,
         },
     )
 
@@ -64,7 +65,7 @@ class StagflationHypothesis(Hypothesis):
         vix = signals["vix"]
         gold = prices["Gold"]
         spx = prices["US Equity"]
-        bonds = prices["US Bonds"]
+        bonds = prices["US Treasuries"]
         tips = panel.tips
 
         feats = pd.DataFrame(index=signals.index)

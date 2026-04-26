@@ -3,6 +3,7 @@
 from backtesting.models.base import BaseModel, ModelConfig
 from backtesting.models.xgb_model import XGBModel
 from backtesting.models.lstm_model import LSTMModel
+from backtesting.models.return_forecaster import TorchReturnForecaster
 from backtesting.models.transformer_model import TransformerModel
 
 MODEL_REGISTRY: dict[str, type[BaseModel]] = {
@@ -23,6 +24,7 @@ __all__ = [
     "LSTMModel",
     "MODEL_REGISTRY",
     "ModelConfig",
+    "TorchReturnForecaster",
     "TransformerModel",
     "XGBModel",
     "build_model",

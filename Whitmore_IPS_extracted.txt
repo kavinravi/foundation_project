@@ -1,0 +1,499 @@
+
+
+--- PAGE 1 ---
+Whitmore Capital Partners
+Investment Policy Statement
+ISSUED
+April 2026
+CLASSIFICATION
+Confidential
+STATUS
+Active
+AUM
+~USD 1.8 billion
+CONFIDENTIAL — For internal use and educational purposes only. Not for distribution.
+
+
+
+--- PAGE 2 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 2
+April 2026
+1. Purpose and Scope
+This Investment Policy Statement governs the liquid investable assets of Whitmore Capital Partners, a
+single-family office managing approximately $1.8 billion in diversified financial assets on behalf of the
+Whitmore family. It establishes the portfolio's return objective, risk limits, approved asset classes,
+benchmark definitions, and governance requirements.
+The document anchors the 2026 strategic and tactical allocation framework in a consistent decision
+process. The Investment Principal retains final authority over policy changes and exception approvals.
+The Chief Investment Officer is responsible for implementation oversight and for escalating any actual or
+projected breach of the hard constraints stated below.
+2. Investment Objectives
+The portfolio seeks a long-run total return of 8.0% annualized over rolling 5-year periods. The objective
+reflects the family's preference for real wealth accumulation across generations.
+The portfolio will be managed on a total-return basis. The family is open to non-traditional return sources
+provided they are liquid, transparent, and accompanied by a clear economic rationale. The portfolio's
+base currency is USD; all performance and risk metrics are measured in USD terms. Non-USD assets
+carry embedded currency exposure unless explicitly hedged.
+3. Risk Tolerance
+The portfolio is expected to operate within a realized volatility ceiling of 15% annualized and a
+maximum tolerated drawdown of 25% peak-to-trough. These constraints reflect the family's
+willingness to accept meaningful short-term drawdowns in exchange for higher long-term compounding.
+The family is comfortable with asset classes that exhibit high standalone volatility provided they improve
+the portfolio's risk-adjusted return profile at the total portfolio level. Illiquidity is acceptable in moderation,
+but all policy assets must be exchange-traded or redeemable within five business days.
+4. Benchmark Portfolios
+Two benchmarks serve distinct roles in portfolio evaluation. Both are fixed-weight portfolios rebalanced
+on the last trading day of each calendar year.
+Benchmark 1: Traditional 60/40
+Asset
+Ticker
+Weight (%)
+US Equity
+SPXT
+ 60
+US Treasury Bonds
+LBUSTRUU
+ 40
+Benchmark 1 represents the conventional institutional starting point. It is the minimum-complexity
+reference against which any diversification benefit must be demonstrated.
+Benchmark 2: Diversified Policy Portfolio
+Asset
+Ticker
+Weight (%)
+US Equity
+SPXT
+ 40
+Japan Equity
+NIKKEI225
+ 5
+
+
+
+--- PAGE 3 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 3
+April 2026
+Asset
+Ticker
+Weight (%)
+China A-shares
+CSI300_CHINA
+ 5
+US Treasury Bonds
+LBUSTRUU
+ 10
+US TIPS
+BROAD_TIPS
+ 5
+US REITs
+B3REITT
+ 10
+Gold
+XAU
+ 15
+Silver
+SILVER_FUT
+ 5
+Swiss Franc
+CHF_FRANC
+ 5
+Benchmark 2 reflects the family's conviction that diversification across geographies, real assets, and
+alternative stores of value improves risk-adjusted returns over full market cycles. It is the performance
+reference for the Strategic Asset Allocation and serves as the baseline against which any Tactical Asset
+Allocation overlay must demonstrate added value.
+5. Strategic Asset Allocation Policy
+The strategic allocation is structured around liquid, exchange-traded instruments spanning equities, fixed
+income, real assets, and non-traditional diversifiers. Policy bands are designed to preserve flexibility for
+the CIO while maintaining accountability to the family's risk framework. Each asset is classified into one
+of three tiers that determine its role in the portfolio and the aggregate limits that apply to it.
+Asset
+Ticker
+Min (%)
+Target (%)
+Max (%)
+Classification
+US Equity
+SPXT
+ 30
+ 40
+ 45
+Core
+UK Equity
+FTSE100
+ 0
+ 0
+ 10
+Core
+US Treasury Bonds
+LBUSTRUU
+ 5
+ 10
+ 15
+Core
+US TIPS
+BROAD_TIPS
+ 0
+ 5
+ 10
+Core
+US REITs
+B3REITT
+ 5
+ 10
+ 20
+Satellite
+Gold
+XAU
+ 10
+ 15
+ 25
+Satellite
+Japan Equity
+NIKKEI225
+ 0
+ 5
+ 15
+Satellite
+Bitcoin
+BITCOIN
+ 0
+ 0
+ 5
+Non-Traditional
+Silver
+SILVER_FUT
+ 0
+ 5
+ 15
+Satellite
+China A-shares
+CSI300_CHINA
+ 0
+ 5
+ 15
+Satellite
+Swiss Franc
+CHF_FRANC
+ 0
+ 5
+ 10
+Non-Traditional
+Target weights sum to 100%. Band widths reflect drift tolerance between annual rebalances:
+higher-volatility assets (equities, gold, silver) receive wider bands because their market-driven weight drift
+is larger; lower-volatility assets (bonds, TIPS, CHF) receive tighter bands. Assets with a 0% target
+(FTSE100, Bitcoin) carry no minimum and a modest upside ceiling for opportunistic use. Individual bands
+are per-sleeve and must be satisfied jointly with the Section 7 aggregate constraints (Core floor 40%,
+Satellite cap 45%, Non-Traditional cap 20% per Amendment 2026-02, single-sleeve maximum 45%);
+where an individual Max and an aggregate cap conflict, the aggregate cap binds.
+Classification definitions:
+Core:
+
+
+
+--- PAGE 4 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 4
+April 2026
+Traditional equity and fixed income exposures that form the structural foundation of the portfolio.
+Expected to comprise the majority of portfolio value at all times.
+Satellite:
+Diversifying asset classes with empirical evidence of long-run risk premia or portfolio-level risk
+reduction. Intended as permanent but flexibly sized positions.
+Non-Traditional:
+Higher-conviction, higher-volatility diversifiers. Permitted in the strategic allocation at modest size and
+subject to a separate aggregate cap.
+6. Tactical Asset Allocation Overlay
+The CIO may implement a Tactical Asset Allocation overlay that temporarily deviates from SAA target
+weights when a documented signal triggers. The TAA overlay operates within the following framework.
+6.1 TAA Bands for SAA Assets
+When a TAA signal is active, per-sleeve allocation bounds widen as follows. All aggregate constraints
+from Section 7 continue to apply.
+Asset
+Ticker
+TAA Min (%)
+TAA Max (%)
+US Equity
+SPXT
+ 20
+ 45
+UK Equity
+FTSE100
+ 0
+ 15
+US Treasury Bonds
+LBUSTRUU
+ 0
+ 35
+US TIPS
+BROAD_TIPS
+ 0
+ 25
+US REITs
+B3REITT
+ 0
+ 25
+Gold
+XAU
+ 0
+ 30
+Japan Equity
+NIKKEI225
+ 0
+ 20
+Bitcoin
+BITCOIN
+ 0
+ 10
+Silver
+SILVER_FUT
+ 0
+ 20
+China A-shares
+CSI300_CHINA
+ 0
+ 20
+Swiss Franc
+CHF_FRANC
+ 0
+ 15
+6.2 Opportunistic Sleeve
+The TAA overlay may temporarily allocate to assets outside the SAA universe for short-term hedging or
+alpha capture. These Opportunistic positions are subject to:
+ Maximum 5% of portfolio value per individual Opportunistic asset
+ Maximum 15% of portfolio value in aggregate across all Opportunistic positions
+ Positions must be closed or formally reviewed within 12 months of initiation
+Eligible Opportunistic assets are listed in Appendix A.
+6.3 TAA Governance
+All TAA deviations require:
+ A written signal specification filed with the CIO before activation
+
+
+
+--- PAGE 5 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 5
+April 2026
+ A stated hypothesis and economic rationale for the signal
+ Walk-forward or out-of-sample validation before live deployment
+ Monthly reporting of TAA P&L attribution relative to the SAA baseline (Benchmark 2)
+7. Aggregate Constraints
+The following constraints apply at all times, under both SAA and TAA regimes. The Satellite allocation
+cap is set five percentage points above Benchmark 2's 40% Satellite weight to permit targeted conviction
+positioning within the diversifier sleeve while preserving the principle that Core must remain the structural
+foundation of the portfolio. Any breach requires immediate escalation to the CIO and written
+documentation within 48 hours.
+Constraint
+Threshold
+Type
+Core allocation floor
+40%
+ Hard
+Satellite allocation cap
+45%
+ Hard
+Non-Traditional allocation cap
+15%
+ Hard
+Opportunistic allocation cap
+15%
+ Hard
+Opportunistic single-asset cap
+5%
+ Hard
+Single-sleeve maximum
+45%
+ Hard
+Fully invested requirement
+100% (no cash drag)
+ Hard
+Short-selling
+Not permitted
+ Hard
+Volatility ceiling
+15% annualized
+ Hard
+Maximum drawdown tolerance
+25% peak-to-trough
+ Hard
+Classification reference for aggregate limits:
+Classification
+Assets Included
+Core
+SPXT, FTSE100, LBUSTRUU, BROAD_TIPS
+Satellite
+B3REITT, XAU, SILVER_FUT, NIKKEI225, CSI300_CHINA
+Non-Traditional
+BITCOIN, CHF_FRANC
+Opportunistic
+All Appendix A assets (TAA-only)
+AMENDMENT NOTICE (April 2026, Family Resolution 2026-02)
+Following the Q1 2026 investment review, the Investment Principal resolved to revise one binding policy
+limit effective immediately. The non-traditional allocation cap is increased from 15% to 20% of total
+portfolio value, reflecting the family's updated conviction in the diversification benefits of non-traditional
+stores of value during the current macro regime. All other constraints remain unchanged. The revised
+threshold (20% non-traditional cap) supersedes the figure shown in the table above and should be used
+as the binding constraint in all portfolio construction and optimization work performed under this IPS. The
+table above retains the prior figure for audit trail purposes only.
+8. Transaction Costs
+
+
+
+--- PAGE 6 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 6
+April 2026
+A round-trip transaction cost of 5 basis points shall be applied to all portfolio turnover at each
+rebalancing event, including both SAA rebalances and TAA-driven adjustments. Transaction costs must
+be reflected in all performance reporting and backtest evaluations.
+9. Rebalancing Policy
+SAA weights will be rebalanced on the last trading day of each calendar year. TAA adjustments may
+occur at any frequency when a documented signal triggers, subject to the governance requirements in
+Section 6.3.
+Emergency rebalancing may be initiated if any hard policy limit is breached or if the CIO determines that
+market conditions require immediate action. Any interim rebalance requires written signoff from the CIO
+and the Investment Principal and should normally be executed within two business days of approval.
+10. Monitoring and Reporting
+10.1 Scheduled Reporting
+The CIO is responsible for producing the following reports on a fixed schedule. Both Benchmark 1 (60/40)
+and Benchmark 2 (Diversified Policy Portfolio) serve as performance references in all reporting; neither is
+a mirror of the strategic target allocation.
+Monthly Risk Summary (delivered to the Investment Principal by the 5th business day of each month):
+ Portfolio return (gross and net of transaction costs) for the prior month, quarter-to-date, year-to-date,
+and inception-to-date, measured against both benchmarks
+ Realized annualized volatility over trailing 1-month, 3-month, and 12-month windows
+ Current drawdown from most recent peak, with date of peak
+ Current allocation weights by sleeve and classification tier (Core, Satellite, Non-Traditional,
+Opportunistic), flagging any weight within 2 percentage points of a policy limit
+ TAA signal status (active or inactive) and any TAA-driven rebalances executed during the month
+Quarterly Investment Review (presented to the Investment Principal within 15 business days of
+quarter-end):
+ All content from the monthly summary, plus rolling 5-year annualized return relative to the 8.0%
+objective
+ Return attribution decomposed by asset class and by SAA vs. TAA contribution
+ Sharpe ratio (risk-free rate: prevailing 3-month US Treasury yield) measured against both
+benchmarks
+ Calmar ratio and Value-at-Risk (95%, historical) for the portfolio and both benchmarks
+ Compliance confirmation that all hard constraints in Section 7 were satisfied throughout the quarter,
+or documentation of any breach and remediation taken
+ Forward-looking commentary on signal outlook and any proposed changes to TAA parameters
+10.2 Event-Driven Reporting
+A formal policy review is triggered immediately when any of the following thresholds is breached or
+projected to be breached within five business days:
+ Realized annualized volatility exceeds 15%
+ Peak-to-trough drawdown breaches 25%
+ Non-traditional allocation exceeds 20% (per Amendment 2026-02)
+ Satellite allocation exceeds 45%
+
+
+
+--- PAGE 7 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 7
+April 2026
+ Any single sleeve exceeds 45%
+ Any other hard constraint in Section 7 is violated
+Upon a trigger event, the CIO must deliver a written incident report to the Investment Principal within 48
+hours. The report must include the date and cause of the breach, the magnitude and duration of the
+deviation, any corrective trades executed or proposed, and a plain-language explanation of the
+remediation plan. The Investment Principal may require an extraordinary review meeting at their
+discretion.
+10.3 Annual Policy Review
+A comprehensive IPS review will be conducted annually, coinciding with the year-end rebalance. The
+review must evaluate whether the return objective, risk limits, benchmark composition, SAA targets, and
+TAA framework remain appropriate given current market conditions, family circumstances, and observed
+portfolio behavior over the prior year. Any proposed amendments require written approval from the
+Investment Principal before implementation.
+
+
+
+--- PAGE 8 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 8
+April 2026
+Appendix A: Eligible Opportunistic Assets
+The following assets are approved for Opportunistic positions under the TAA overlay (Section 6.2). Each
+position is subject to the 5% per-asset and 15% aggregate caps.
+Equities
+Asset
+Ticker
+Israel Equity
+TA-125_ISRAEL
+Fixed Income
+Asset
+Ticker
+Short-Duration TIPS
+0_5Y_TIPS
+Asia USD IG Credit
+BAIGTRUU_ASIACREDIT
+Euro Short Sovereign
+BCEE1T_EUROAREA
+Japan Government Bonds
+I02923JP_JAPAN_BOND
+Euro Aggregate Bond
+LBEATREU_EUROBONDAGG
+Commodities
+Asset
+Ticker
+Copper
+COPPERSPOT
+Natural Gas
+NATURALGAS
+Coffee
+COFFEE_FUT
+Cocoa
+COCOAINDEXSPOT
+Cotton
+COTTON_FUT
+Wheat
+WHEAT_SPOT
+Soybeans
+SOYBEAN_FUT
+Digital Assets
+Asset
+Ticker
+Ethereum
+ETHEREUM
+Currencies
+Asset
+Ticker
+Australian Dollar
+AUD
+Canadian Dollar
+CAD
+British Pound
+GBP_POUND
+Euro
+EURO
+Chinese Yuan
+CNY
+
+
+
+--- PAGE 9 ---
+Whitmore Capital Partners
+Investment Policy Statement
+CONFIDENTIAL
+Page 9
+April 2026
+Asset
+Ticker
+Israeli Shekel
+SHEKEL
+Japanese Yen
+USDJPY
+ CONFIDENTIAL: For internal use and educational purposes only. Not for distribution.

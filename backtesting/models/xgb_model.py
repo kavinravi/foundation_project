@@ -1,9 +1,14 @@
-"""XGBoost classifier wrapped to fit the BaseModel interface."""
+"""XGBoost classifier wrapped to fit the BaseModel interface.
+
+Defaults are GPU-first when CUDA is available so the tabular baseline can
+share the RTX 5090 runtime with the PyTorch models.
+"""
 
 from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+import torch
 from xgboost import XGBClassifier
 
 from backtesting.models.base import BaseModel, ModelConfig
@@ -20,6 +25,7 @@ class XGBModel(BaseModel):
 
     def _hyperparams(self) -> dict:
         cfg = self.config
+        device = cfg.get("device", "cuda" if torch.cuda.is_available() else "cpu")
         return {
             "max_depth": int(cfg.get("max_depth", 3)),
             "learning_rate": float(cfg.get("learning_rate", 0.05)),
@@ -32,6 +38,11 @@ class XGBModel(BaseModel):
             "eval_metric": "logloss",
             "random_state": cfg.seed,
             "tree_method": cfg.get("tree_method", "hist"),
+            "device": device,
+            "sampling_method": cfg.get(
+                "sampling_method",
+                "gradient_based" if device == "cuda" else "uniform",
+            ),
             "verbosity": 0,
         }
 

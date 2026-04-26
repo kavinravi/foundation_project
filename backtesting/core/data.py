@@ -1,20 +1,11 @@
 """Unified data loading for prices and signals.
 
-Combines:
-
-* the Zion 6-asset price panel (`SPXT`, `LBUSTRUU`, `B3REITT`, `XAU`,
-  `XBTUSD`, `USDJPY`) loaded from the local CSV cache, and
-* the cleaned student-sourced signal CSVs produced by
-  ``parse_foundation_data.py`` (``data/signals/``) plus the existing
-  TIPS file (``data/0_5Y_TIPS_2002_D.csv``).
-
-Everything is exposed as time-aligned business-day frames so the
-hypothesis modules can mix and match without worrying about cadence.
+All loaders are repo-local and operate off the checked-in CSV cache in
+`data/`. No part of the backtesting framework imports `build_assignment_4.py`.
 """
 
 from __future__ import annotations
 
-import sys
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -22,19 +13,21 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from backtesting.core.ips import ASSET_ORDER, PRICE_TICKERS
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from build_assignment_4 import (  # noqa: E402
-    fetch_source_tables,
-    prepare_price_panel,
-)
-
-from backtesting.core.ips import ASSET_ORDER  # noqa: E402
-
 DATA_DIR = PROJECT_ROOT / "data"
 SIGNALS_DIR = DATA_DIR / "signals"
+
+OHLCV_CANDIDATES = [
+    DATA_DIR / "zion_ohlcv_daily.csv",
+    DATA_DIR / "zion_ohlcv_daily_full.csv",
+    DATA_DIR / "zion_ohlcv_daily_truncated.csv",
+]
+
+ROOT_ASSET_FILES = {
+    "US TIPS": DATA_DIR / "0_5Y_TIPS_2002_D.csv",
+}
 
 
 @dataclass
@@ -63,6 +56,78 @@ def _read_metadata_csv(path: Path) -> pd.Series:
     return df.set_index("Date")["PX_LAST"].astype(float).sort_index()
 
 
+def _ohlcv_path() -> Path:
+    for path in OHLCV_CANDIDATES:
+        if path.exists():
+            return path
+    raise FileNotFoundError(
+        "Could not find a local Zion OHLCV cache. Expected one of: "
+        + ", ".join(str(path) for path in OHLCV_CANDIDATES)
+    )
+
+
+def _load_ohlcv_table() -> pd.DataFrame:
+    ohlcv = pd.read_csv(_ohlcv_path(), parse_dates=["date"])
+    expected_cols = {"ticker", "date", "adj_close"}
+    missing = expected_cols.difference(ohlcv.columns)
+    if missing:
+        raise ValueError(f"OHLCV cache is missing required columns: {sorted(missing)}")
+    return ohlcv
+
+
+def prepare_price_panel(ohlcv: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Map raw Zion OHLCV rows into the base Zion price and return panel."""
+    prices = (
+        ohlcv.pivot_table(index="date", columns="ticker", values="adj_close", aggfunc="last")
+        .sort_index()
+        .reindex(columns=PRICE_TICKERS)
+    )
+    prices = prices.apply(pd.to_numeric, errors="coerce")
+
+    panel = pd.DataFrame(index=prices.index)
+    panel["US Equity"] = prices["SPXT"]
+    panel["US Treasuries"] = prices["LBUSTRUU"]
+    panel["US REITs"] = prices["B3REITT"]
+    panel["Gold"] = prices["XAU"]
+    panel["Bitcoin"] = prices["XBTUSD"]
+    panel["JPY"] = 1.0 / prices["USDJPY"]
+    panel = panel.sort_index()
+
+    filled = panel.ffill()
+    started = filled.notna()
+    returns = filled.pct_change(fill_method=None)
+    valid = started & started.shift(1, fill_value=False)
+    returns = returns.where(valid)
+    return filled, returns
+
+
+def _load_root_asset_series() -> pd.DataFrame:
+    series_map: dict[str, pd.Series] = {}
+    for asset_name, path in ROOT_ASSET_FILES.items():
+        series = _read_metadata_csv(path)
+        series.name = asset_name
+        series_map[asset_name] = series
+    panel = pd.concat(series_map.values(), axis=1).sort_index() if series_map else pd.DataFrame()
+    if not panel.empty:
+        panel.index = pd.to_datetime(panel.index).normalize()
+        panel = panel.groupby(level=0).last().sort_index()
+    return panel
+
+
+def _build_candidate_asset_panel(zion_prices: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    extra_prices = _load_root_asset_series()
+    prices = pd.concat([zion_prices, extra_prices], axis=1).sort_index()
+    prices = prices.groupby(level=0).last().sort_index()
+    prices = prices.reindex(columns=ASSET_ORDER)
+
+    filled = prices.ffill()
+    started = filled.notna()
+    returns = filled.pct_change(fill_method=None)
+    valid = started & started.shift(1, fill_value=False)
+    returns = returns.where(valid)
+    return filled, returns
+
+
 SIGNAL_FILES = {
     "hy_oas": SIGNALS_DIR / "LF98OAS.csv",
     "vix": SIGNALS_DIR / "VIX.csv",
@@ -84,22 +149,14 @@ TIPS_FILE = DATA_DIR / "0_5Y_TIPS_2002_D.csv"
 
 @lru_cache(maxsize=1)
 def load_price_panel() -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load the 6-asset Zion price panel from the local CSV cache."""
-    _, ohlcv = fetch_source_tables(refresh=False)
-    filled, returns = prepare_price_panel(ohlcv)
-    return filled, returns
+    """Load the candidate tradable sleeve into aligned prices and returns."""
+    zion_prices, _ = prepare_price_panel(_load_ohlcv_table())
+    return _build_candidate_asset_panel(zion_prices)
 
 
 @lru_cache(maxsize=1)
 def load_signal_panel() -> tuple[pd.DataFrame, pd.Series]:
-    """Load all student-sourced signals into a single DataFrame.
-
-    Daily series are merged on the union of business-day dates and
-    forward-filled (so monthly series like ISM/Confidence have a
-    constant value within each month). The TIPS series is returned
-    separately so hypothesis modules can compute their own derived
-    spreads without polluting the signal namespace.
-    """
+    """Load all student-sourced signals into a single DataFrame."""
     series_map: dict[str, pd.Series] = {}
     for name, path in SIGNAL_FILES.items():
         series = _read_metadata_csv(path)
@@ -166,12 +223,15 @@ def trend_zscore(series: pd.Series, lookback: int = 252) -> pd.Series:
 
 __all__ = [
     "MarketPanel",
+    "OHLCV_CANDIDATES",
+    "ROOT_ASSET_FILES",
     "SIGNAL_FILES",
     "TIPS_FILE",
     "load_market_panel",
     "load_price_panel",
     "load_signal_panel",
     "monthly_resample",
+    "prepare_price_panel",
     "relative_momentum",
     "trailing_window_change",
     "trend_zscore",

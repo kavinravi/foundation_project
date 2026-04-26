@@ -1,4 +1,0 @@
-metric,actual,target,result
-Return p.a.,0.03220699817636219,0.05,Fail
-Volatility p.a.,0.04767989823205892,0.11,Pass
-Max drawdown,-0.2006065222779364,-0.13,Fail
