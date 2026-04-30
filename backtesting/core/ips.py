@@ -24,7 +24,7 @@ ROUND_TRIP_COST_BPS = 5.0
 BASE_WINDOW = 252
 
 # Zion OHLCV tickers with usable local price history.
-PRICE_TICKERS = ["SPXT", "LBUSTRUU", "B3REITT", "XAU", "XBTUSD", "USDJPY"]
+PRICE_TICKERS = ["SPXT", "LBUSTRUU", "B3REITT", "XAU", "XBTUSD"]
 
 # Available Whitmore / proxy tradable universe. `US TIPS` is proxied by the
 # local `0_5Y_TIPS_2002_D` series because `BROAD_TIPS` is not included.
@@ -35,7 +35,6 @@ ASSET_ORDER = [
     "US REITs",
     "Gold",
     "Bitcoin",
-    "JPY",
 ]
 
 ASSET_LABELS = {
@@ -45,7 +44,6 @@ ASSET_LABELS = {
     "B3REITT": "US REITs",
     "XAU": "Gold",
     "XBTUSD": "Bitcoin",
-    "USDJPY": "JPY",
 }
 
 ASSET_TICKERS = {
@@ -55,7 +53,6 @@ ASSET_TICKERS = {
     "US REITs": "B3REITT",
     "Gold": "XAU",
     "Bitcoin": "XBTUSD",
-    "JPY": "USDJPY",
 }
 
 ASSET_CLASSIFICATION = {
@@ -65,7 +62,6 @@ ASSET_CLASSIFICATION = {
     "US REITs": "satellite",
     "Gold": "satellite",
     "Bitcoin": "non_traditional",
-    "JPY": "opportunistic",
 }
 
 CORE_ASSETS = [asset for asset, group in ASSET_CLASSIFICATION.items() if group == "core"]
@@ -74,7 +70,7 @@ NON_TRADITIONAL = [asset for asset, group in ASSET_CLASSIFICATION.items() if gro
 OPPORTUNISTIC_ASSETS = [asset for asset, group in ASSET_CLASSIFICATION.items() if group == "opportunistic"]
 
 RISKY_ASSETS = ["US Equity", "US REITs", "Bitcoin"]
-DEFENSIVE_ASSETS = ["US Treasuries", "US TIPS", "Gold", "JPY"]
+DEFENSIVE_ASSETS = ["US Treasuries", "US TIPS", "Gold"]
 
 CORE_FLOOR = 0.40
 SATELLITE_CAP = 0.45
@@ -91,7 +87,6 @@ SAA_TARGET_WEIGHTS = pd.Series(
         "US REITs": 0.10,
         "Gold": 0.15,
         "Bitcoin": 0.00,
-        "JPY": 0.00,
     },
     dtype=float,
 )
@@ -104,7 +99,6 @@ SAA_LOWER_BOUNDS = pd.Series(
         "US REITs": 0.05,
         "Gold": 0.10,
         "Bitcoin": 0.00,
-        "JPY": 0.00,
     },
     dtype=float,
 )
@@ -117,7 +111,6 @@ SAA_UPPER_BOUNDS = pd.Series(
         "US REITs": 0.20,
         "Gold": 0.25,
         "Bitcoin": 0.05,
-        "JPY": 0.00,
     },
     dtype=float,
 )
@@ -130,7 +123,6 @@ TAA_LOWER_BOUNDS = pd.Series(
         "US REITs": 0.00,
         "Gold": 0.00,
         "Bitcoin": 0.00,
-        "JPY": 0.00,
     },
     dtype=float,
 )
@@ -143,7 +135,6 @@ TAA_UPPER_BOUNDS = pd.Series(
         "US REITs": 0.25,
         "Gold": 0.30,
         "Bitcoin": 0.10,
-        "JPY": 0.05,
     },
     dtype=float,
 )

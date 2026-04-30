@@ -51,7 +51,6 @@ and local `data/` availability:
 - `US REITs` (`B3REITT`) - Satellite
 - `Gold` (`XAU`) - Satellite
 - `Bitcoin` (`XBTUSD`) - Non-Traditional
-- `JPY` (`USDJPY`, inverted for USD-investor returns) - Opportunistic
 
 Do not fabricate missing IPS series. Missing local series include UK equity,
 Japan equity, China A-shares, silver, and Swiss franc. Benchmark 2 is computed
@@ -78,7 +77,6 @@ SAA policy bands for available assets:
 - `US REITs`: 5% to 20%, target 10%.
 - `Gold`: 10% to 25%, target 15%.
 - `Bitcoin`: 0% to 5%, target 0%.
-- `JPY`: 0% target and 0% SAA max; TAA-only opportunistic asset.
 
 TAA bands for available assets:
 
@@ -88,7 +86,6 @@ TAA bands for available assets:
 - `US REITs`: 0% to 25%.
 - `Gold`: 0% to 30%.
 - `Bitcoin`: 0% to 10%.
-- `JPY`: 0% to 5% as an opportunistic asset.
 
 ## Benchmarks
 
@@ -135,7 +132,7 @@ renormalized. The computable Benchmark 2 weights are therefore:
 ```bash
 python -m backtesting.train --hypothesis h1 --return-model lstm \
     --threshold 0.55 --seq-len 6 \
-    --assets "US Equity" "US Treasuries" "US TIPS" "US REITs" "Gold" "Bitcoin" "JPY" \
+    --assets "US Equity" "US Treasuries" "US TIPS" "US REITs" "Gold" "Bitcoin" \
     --taa-band 0.50 --description "smoke Whitmore hybrid xgb+lstm"
 ```
 
@@ -167,7 +164,7 @@ python -m backtesting.train --hypothesis h1 --return-model lstm \
 ```bash
 python -m backtesting.train --hypothesis h1 --return-model transformer \
     --threshold 0.55 --seq-len 12 \
-    --assets "US Equity" "US Treasuries" "US TIPS" "US REITs" "Gold" "Bitcoin" "JPY" \
+    --assets "US Equity" "US Treasuries" "US TIPS" "US REITs" "Gold" "Bitcoin" \
     --taa-band 0.50 \
     --risk-aversion 4.0 --bl-tau 0.05 \
     --forecast-scale 12.0 --regime-view-scale 0.50 \
@@ -227,7 +224,7 @@ Start cheap and broaden only after the hybrid path is stable:
 - Sweep thresholds: `0.45`, `0.50`, `0.55`, `0.60`, `0.65`.
 - Sweep TAA bands: `0.25`, `0.50`, `0.75`, `1.00`.
 - Sweep active asset setups using only IPS-compliant local data:
-  `ips_available`, `policy_core`, `policy_plus_bitcoin`, and `policy_plus_jpy`.
+  `ips_available`, `policy_core`, and `policy_plus_bitcoin`.
 - Sweep sequence lengths for neural return forecasts: `6`, `12`, `18`, `24`.
 - Sweep BL controls: `risk_aversion` from `2` to `8`, `bl_tau` from `0.02` to
   `0.20`, and `regime_view_scale` from `0.25` to `1.00`.

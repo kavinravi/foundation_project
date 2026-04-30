@@ -38,7 +38,6 @@ class StagflationHypothesis(Hypothesis):
             "US Treasuries": +0.03,
             "US TIPS": +0.08,
             "Gold": +0.10,
-            "JPY": +0.02,
         },
     )
 

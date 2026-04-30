@@ -42,7 +42,6 @@ class TwoStageRegimeHypothesis(Hypothesis):
             "US Treasuries": +0.09,
             "US TIPS": +0.04,
             "Gold": +0.05,
-            "JPY": +0.03,
         },
     )
 

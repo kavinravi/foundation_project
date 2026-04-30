@@ -78,7 +78,6 @@ ASSET_SETUPS = {
     "ips_available": list(ASSET_ORDER),
     "policy_core": ["US Equity", "US Treasuries", "US TIPS", "US REITs", "Gold"],
     "policy_plus_bitcoin": ["US Equity", "US Treasuries", "US TIPS", "US REITs", "Gold", "Bitcoin"],
-    "policy_plus_jpy": ["US Equity", "US Treasuries", "US TIPS", "US REITs", "Gold", "JPY"],
 }
 
 

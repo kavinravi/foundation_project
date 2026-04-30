@@ -90,7 +90,6 @@ def prepare_price_panel(ohlcv: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame
     panel["US REITs"] = prices["B3REITT"]
     panel["Gold"] = prices["XAU"]
     panel["Bitcoin"] = prices["XBTUSD"]
-    panel["JPY"] = 1.0 / prices["USDJPY"]
     panel = panel.sort_index()
 
     filled = panel.ffill()

@@ -57,7 +57,7 @@ pip install --user xgboost==3.2.0 statsmodels reportlab scikit-optimize scipy pa
 # Smoke-test a single hybrid combo
 python -m backtesting.train --hypothesis h1 --return-model lstm \
   --threshold 0.55 --seq-len 6 \
-  --assets "US Equity" "US Treasuries" "US TIPS" "US REITs" "Gold" "Bitcoin" "JPY" \
+  --assets "US Equity" "US Treasuries" "US TIPS" "US REITs" "Gold" "Bitcoin" \
   --taa-band 0.50
 
 # Run all four hypotheses with both hybrid model stacks

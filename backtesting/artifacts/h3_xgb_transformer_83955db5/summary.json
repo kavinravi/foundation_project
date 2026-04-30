@@ -1,5 +1,5 @@
 {
-  "hypothesis": "h1",
+  "hypothesis": "h3",
   "model": "xgb_transformer",
   "active_assets": [
     "US Equity",
@@ -12,7 +12,7 @@
   "threshold": 0.55,
   "sequence_length": 6,
   "folds_used": 12,
-  "n_signals_fired": 53,
+  "n_signals_fired": 49,
   "saa_metrics": {
     "total_return_pa": 0.08494392465146228,
     "cumulative_return": 5.351061250519873,
@@ -23,28 +23,28 @@
     "max_drawdown": -0.3054190335112983
   },
   "taa_metrics": {
-    "total_return_pa": 0.09189708291361187,
-    "cumulative_return": 6.340996655574002,
-    "volatility_pa": 0.10032750859069839,
-    "historical_var_95_daily": -0.009225966445893663,
-    "sharpe_rf2": 0.7278474685262741,
-    "calmar": 0.3448763538419425,
-    "max_drawdown": -0.26646385549450713
+    "total_return_pa": 0.09168781340875021,
+    "cumulative_return": 6.309160752847927,
+    "volatility_pa": 0.10288831228116399,
+    "historical_var_95_daily": -0.009039359701914296,
+    "sharpe_rf2": 0.7109645187778546,
+    "calmar": 0.31635947912469997,
+    "max_drawdown": -0.2898216094628524
   },
   "benchmark_metrics": null,
   "ips_pass_count_taa": 2,
   "ips_pass_count_saa": 2,
-  "ips_objective_taa": 1029.1358136666101,
+  "ips_objective_taa": 1034.0843717798118,
   "ips_objective_saa": 1037.9976726343668,
   "return_gap_taa": 0.0,
   "vol_gap_taa": 0.0,
-  "drawdown_gap_taa": 0.01646385549450713,
-  "ips_loss_taa": 1029.1358136666101,
+  "drawdown_gap_taa": 0.0398216094628524,
+  "ips_loss_taa": 1034.0843717798118,
   "ips_loss_saa": 1037.9976726343668,
-  "delta_drawdown": 0.03895517801679116,
-  "delta_return": 0.006953158262149595,
-  "delta_vol": -0.003755075381836309,
-  "delta_sharpe": 0.08341742213998038,
-  "elapsed_seconds": 14.865991353988647,
+  "delta_drawdown": 0.015597424048445885,
+  "delta_return": 0.00674388875728793,
+  "delta_vol": -0.0011942716913707074,
+  "delta_sharpe": 0.06653447239156085,
+  "elapsed_seconds": 15.460840225219727,
   "notes": "asset_setup=ips_available; assets=['US Equity', 'US Treasuries', 'US TIPS', 'US REITs', 'Gold', 'Bitcoin']; taa_band=0.5; risk_aversion=4.0; bl_tau=0.05; regime_view_scale=0.5"
 }

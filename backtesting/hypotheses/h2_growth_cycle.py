@@ -38,7 +38,6 @@ class GrowthCycleHypothesis(Hypothesis):
             "US Treasuries": -0.08,
             "US TIPS": -0.03,
             "Gold": -0.04,
-            "JPY": -0.04,
         },
     )
 
