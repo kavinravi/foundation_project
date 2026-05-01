@@ -7,7 +7,8 @@
     "US TIPS",
     "US REITs",
     "Gold",
-    "Bitcoin"
+    "Bitcoin",
+    "JPY"
   ],
   "threshold": 0.55,
   "sequence_length": 6,
@@ -46,5 +47,5 @@
   "delta_vol": -0.003755075381836309,
   "delta_sharpe": 0.08341742213998038,
   "elapsed_seconds": 14.865991353988647,
-  "notes": "asset_setup=ips_available; assets=['US Equity', 'US Treasuries', 'US TIPS', 'US REITs', 'Gold', 'Bitcoin']; taa_band=0.5; risk_aversion=4.0; bl_tau=0.05; regime_view_scale=0.5"
+  "notes": "asset_setup=ips_available; assets=['US Equity', 'US Treasuries', 'US TIPS', 'US REITs', 'Gold', 'Bitcoin', 'JPY']; taa_band=0.5; risk_aversion=4.0; bl_tau=0.05; regime_view_scale=0.5"
 }
