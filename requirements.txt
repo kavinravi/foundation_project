@@ -1,0 +1,26 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+# --- PyTorch (CUDA 12.8; Blackwell / RTX 5090) — keep minor versions aligned ---
+torch>=2.7.0,<2.8
+torchvision>=0.22.0,<0.23
+torchaudio>=2.7.0,<2.8
+
+# --- Core numerics & data ---
+numpy>=1.26,<3
+pandas>=2.1
+scipy>=1.11
+
+# --- ML / stats (used by backtesting + build_assignment_4.py) ---
+scikit-learn>=1.3
+scikit-optimize>=0.9
+statsmodels>=0.14
+xgboost>=2.1
+
+# --- Plotting & reporting ---
+matplotlib>=3.8
+reportlab>=4.0
+
+# --- Notebooks ---
+jupyter>=1.0
+ipykernel>=6.29
+ipython>=8.12
